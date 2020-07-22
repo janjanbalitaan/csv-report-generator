@@ -136,7 +136,8 @@ if __name__ == '__main__':
                 senders = email_from#.split(';')
                 recipients = email_to#.split(';')
                 message = set_email_message(senders, recipients, email_subject, email_content)
-                
+                message.attachment = attachment
+
                 email_key = os.environ['EMAIL_KEY']
                 sendgrid_client = get_sendgrid_client(email_key)
 
